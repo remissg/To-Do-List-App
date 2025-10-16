@@ -2,7 +2,9 @@
 
 A stylish and modern To-Do List application designed with a clean, neumorphic interface. It helps you organize your tasks efficiently with features like due dates, times, and categories, all wrapped in a beautiful, user-friendly package with light and dark modes.
 
-![To-Do List App Screenshot](placeholder.png) <!-- TODO: Add a screenshot of the app -->
+🔗 **Live Demo**:  
+👉 [Explore the To Do App](https://remissg.github.io/To-Do-List-App/)
+ <!-- TODO: Add a screenshot of the app -->
 
 ## ✨ Features
 
@@ -23,10 +25,13 @@ A stylish and modern To-Do List application designed with a clean, neumorphic in
 ## 📸 Screenshots
 
 ### Light Mode
-!Light Mode Screenshot <!-- TODO: Add a screenshot of the light mode -->
 
+<img width="2880" height="1800" alt="Screenshot 2025-10-16 165601" src="https://github.com/user-attachments/assets/ed33c327-13a7-42a8-8f61-8b110fe716b4" />
+
+---
 ### Dark Mode
-!Dark Mode Screenshot <!-- TODO: Add a screenshot of the dark mode -->
+<img width="2880" height="1800" alt="Screenshot 2025-10-16 165614" src="https://github.com/user-attachments/assets/1870aae6-a54c-4bfd-8dd5-f9d0c56cd252" />
+
 
 ---
 
@@ -72,7 +77,7 @@ You just need a modern web browser.
 3.  **Save Task**: Click the "Add" button to save the task to your list.
 4.  **Complete a Task**: Click on a task to mark it as completed. The text will be struck through.
 5.  **Edit a Task**: Click the pencil icon (✎) to modify an existing task.
-6.  **Delete a Task**: Click the cross icon (×) to remove a task from the list.
+6.  **Delete a Task**: Click the cross icon (🗑️) to remove a task from the list.
 7.  **Change Theme**: Click the sun/moon icon at the top to switch between light and night modes.
 
 ---
@@ -85,6 +90,3 @@ You just need a modern web browser.
 
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
----
-
-*This README was generated with the help of Gemini Code Assist.*
