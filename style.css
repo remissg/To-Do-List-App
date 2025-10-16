@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+
+:root{
+    /* Light Mode Variables (Default) */
+    --bg-color: #ebf5fc;
+    --main-color: #007bff;
+    --light-shadow: #ffffff;
+    --dark-shadow: #c1d2e0;
+    --text-color: #333;
+    --input-color: #1f1e1e;
+    --del-edit-color: #888;
+}
+
+/* --- Night Mode Variables --- */
+.night-mode {
+    --bg-color: #2c3e50; /* Dark background */
+    --main-color: #4CAF50; /* Green highlight for dark mode */
+    --light-shadow: #3f5b77; /* Darker light shadow */
+    --dark-shadow: #1e2b38; /* Even darker shadow */
+    --text-color: #ecf0f1; /* Light text */
+    --input-color: #dae2e8; /* Lighter input text */
+    --del-edit-color: #95a5a6;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color); /* Use variable */
+    font-family: "Quintessential", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x : hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--bg-color);
+    box-shadow: 7px 7px 15px var(--dark-shadow), -7px -7px 15px var(--light-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+h1{
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; 
+}
+
+#theme-toggle {
+    border: none;
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.2s;
+}
+
+#theme-toggle:hover {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#theme-toggle:active {
+    box-shadow: inset 2px 2px 5px var(--dark-shadow), inset -2px -2px 5px var(--light-shadow);
+}
+
+.task{
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px var(--dark-shadow), -5px -5px 10px var(--light-shadow);
+    transition: box-shadow 0.3s;
+}
+
+#input-box{
+    flex: 1 1 100%; 
+    border: none;
+    background-color: transparent;
+    padding: 10px 10px 5px 10px;
+    font-size: 16px;
+    font-family: "Quintessential", serif;
+    border-radius: 8px;
+    color: var(--input-color);
+}
+
+#input-box:hover{
+    box-shadow: 2px 2px 4px var(--main-color), -2px -2px 4px var(--main-color);
+}
+
+.datetime-inputs {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    padding: 5px 10px 10px 10px;
+}
+
+.extra-inputs {
+    flex: 1 1 50%; 
+    padding: 5px 10px 10px 10px;
+}
+
+/* Base styles for date, time, and category inputs */
+#date-input, #time-input, #category-input {
+    border: 1px solid var(--dark-shadow);
+    background-color: var(--bg-color);
+    padding: 5px;
+    border-radius: 8px;
+    font-family: "Quintessential", serif;
+    font-size: 14px;
+    color: var(--input-color);
+    box-shadow: inset 1px 1px 3px var(--dark-shadow);
+    transition: background-color 0.3s;
+}
+
+
+#category-input {
+    width: 100%;
+    /* Disable default arrow */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+}
+
+
+#date-input:focus, #time-input:focus, #category-input:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: inset 1px 1px 3px var(--dark-shadow), 0 0 5px var(--main-color);
+}
+
+
+#add-task{
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--light-shadow);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px 6px var(--dark-shadow), -3px -3px 6px var(--light-shadow);
+    margin-left: auto;
+}
+
+#add-task:hover {
+    background-color: color-mix(in srgb, var(--main-color) 80%, black);
+}
+
+#add-task:active {
+    box-shadow: inset 2px 2px 5px var(--dark-shadow), inset -2px -2px 5px var(--light-shadow);
+}
+
+#list-container{
+    padding: 0;
+}
+
+#list-container li {
+    list-style: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 12px 10px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin: 10px 0;
+    border-radius: 12px;
+    background: var(--bg-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s;
+    padding-top: 15px;
+}
+
+/* Style for the date/time text inside the list item */
+#list-container li .task-details {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--del-edit-color);
+    margin-top: 2px;
+}
+
+/* NEW: Category tag style */
+#list-container li .category-tag {
+    position: absolute;
+    top: 30%;
+    right: 100px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--light-shadow);
+    background-color: var(--main-color);
+    text-transform: uppercase;
+    box-shadow: 1px 1px 3px var(--dark-shadow);
+}
+
+#list-container li.category-Personal .category-tag {
+    background-color: #28a745; /* Green */
+}
+#list-container li.category-Work .category-tag {
+    background-color: #007bff; /* Blue */
+    color: #dae2e8;
+}
+#list-container li.category-Health .category-tag {
+    background-color: #ffc107; /* Amber/Yellow */
+    color: #333; /* Darker text for visibility on light background */
+}
+#list-container li.category-Urgent .category-tag {
+    background-color: #dc3545; /* Red */
+    color: #c2c5c8
+}
+
+
+#list-container li:hover{
+    box-shadow: 3px 3px 6px var(--dark-shadow), -3px -3px 6px var(--light-shadow);
+}
+
+#list-container li.checked {
+    color: var(--del-edit-color);
+    text-decoration: line-through;
+    box-shadow: inset 3px 3px 6px var(--dark-shadow), inset -3px -3px 6px var(--light-shadow);
+}
+
+/* Ensure the spans within the li are not line-through */
+#list-container li.checked span {
+    text-decoration: none;
+}
+
+#list-container li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(https://thumb.ac-illust.com/f4/f4d2ac07261436d1bc4c655b47801b20_w.jpeg);
+    background-size: cover;
+    background-position: center;
+    top: 30%;
+    left: 8px;
+}
+
+#list-container li.checked::before{
+    background-image: url(https://cdn-icons-png.flaticon.com/512/7518/7518748.png);
+}
+
+#list-container li .del,
+#list-container li .edit {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: var(--del-edit-color);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: color 0.3s;
+}
+
+#list-container li .edit{
+    right: 45px;
+}
+
+#list-container li .del:hover {
+    color: #f44336; 
+    box-shadow: 2px 2px 5px var(--dark-shadow), -2px -2px 5px var(--light-shadow);
+}
+
+#list-container li .edit:hover{
+    color: var(--text-color);
+    box-shadow: 2px 2px 5px var(--dark-shadow), -2px -2px 5px var(--light-shadow);
+}
+
+#list-container li .del:active,
+#list-container li .edit:active {
+    box-shadow: inset -2px -2px 5px var(--dark-shadow), inset 2px 2px 5px var(--dark-shadow);
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 600px) {
+    .todo-app {
+        width: 95%;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .task {
+        padding: 8px;
+    }
+
+    #input-box, #date-input, #time-input, #category-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #add-task {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    #list-container li {
+        font-size: 15px;
+        padding: 10px 8px 10px 45px;
+    }
+
+    #list-container li::before {
+        height: 24px;
+        width: 24px;
+        top: 9px;
+        left: 8px;
+    }
+
+    #list-container li .del,
+    #list-container li .edit {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        line-height: 35px;
+    }
+
+    #list-container li .edit {
+        right: 40px;
+    }
+}

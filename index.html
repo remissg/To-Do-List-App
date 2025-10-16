@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App by @remissg</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="todo-app">
+        <div class="header">
+            <h1>To-Do List 📝</h1>
+            <div id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+        <div class="task">
+            <input type="text" id="input-box" placeholder="Add a new task...">
+            
+            <div class="datetime-inputs">
+                <input type="date" id="date-input">
+                <input type="time" id="time-input">
+            </div>
+
+            <div class="extra-inputs">
+                <select id="category-input">
+                    <option value="">-- Select Category --</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Health">Health</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+            </div>
+            <button id="add-task">ADD</button>
+        </div>
+        <ul id="list-container">
+           
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
